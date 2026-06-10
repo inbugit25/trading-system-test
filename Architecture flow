@@ -1,0 +1,19 @@
+WebSocket (ticks + depth + OI)
+         ↓
+Redis Streaming Layer
+         ↓
+Core Engines
+├── Market Engine (multi-symbol)
+├── Options Engine (ATM ±7, OI, volume)
+├── Greeks Engine (Delta / Gamma / GEX)
+├── Orderflow Engine (CVD + imbalance)
+├── L2 Heatmap Engine (true depth)
+├── Volume Profile Engine (POC)
+├── AI Engine (signals + confidence)
+├── Execution Engine (BUY/SELL)
+         ↓
+Dispatcher (multi-channel)
+         ↓
+FastAPI WebSocket (/ws/*)
+         ↓
+React PRO Terminal (Charts + Footprint + DOM + Options)
